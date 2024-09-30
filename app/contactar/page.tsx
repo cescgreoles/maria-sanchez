@@ -38,10 +38,23 @@ export default function ContactPage() {
   };
 
   return (
-    <div
-      className="min-h-screen flex items-center justify-center bg-cover bg-center"
-      style={{ backgroundImage: 'url("./photo1.JPG")' }}
-    >
+    <div className="min-h-screen flex items-center justify-center">
+      <Image
+        src={"/photo1.JPG"}
+        className="w-full h-full inset-0 object-cover object-center absolute -z-20"
+        width={400}
+        height={300}
+        alt="portada"
+      />
+
+      <Image
+        src={"/photo1.JPG"}
+        className="w-full h-full inset-0 object-cover object-center absolute -z-10"
+        fill
+        sizes="100vw"
+        alt="portada"
+      />
+
       <div className="bg-black bg-opacity-50 backdrop-blur-sm p-8 rounded-lg shadow-lg max-w-md w-full mx-4 m-5">
         <div className="flex justify-center items-center mb-6">
           <Image

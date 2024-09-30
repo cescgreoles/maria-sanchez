@@ -5,7 +5,7 @@ import logo from "@/assets/logo.jpeg";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 
-const images = ["./photo1.JPG", "./photo2.JPG", "./photo3.jpg"];
+const images = ["/photo1.JPG", "/photo2.JPG", "/photo3.jpg"];
 
 const Inicio = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -18,10 +18,23 @@ const Inicio = () => {
   }, []);
 
   return (
-    <div
-      className="relative w-full h-screen bg-cover bg-center transition-all duration-1000"
-      style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
-    >
+    <div className="relative w-screen h-screen">
+      <Image
+        src={images[currentImageIndex]}
+        className="w-full h-full inset-0 object-cover object-center absolute -z-20"
+        width={400}
+        height={300}
+        alt="portada"
+      />
+
+      <Image
+        src={images[currentImageIndex]}
+        className="w-full h-full inset-0 object-cover object-center absolute -z-10"
+        fill
+        sizes="100vw"
+        alt="portada"
+      />
+
       <div className="absolute top-10 left-10">
         <h1 className="text-2xl lg:text-4xl text-white">MARIA TORRECILLAS</h1>
         <p className="text-lg lg:text-xl text-white">FOTOGRAFÍA</p>
