@@ -5,69 +5,16 @@ import Link from "next/link";
 import { FaTimes } from "react-icons/fa";
 import { promises as fs } from "fs";
 
-// type Proyecto = {
-//   id: number;
-//   img: string;
-//   descripcion: string;
-//   photos?: string[];
-// };
-
-// const proyectosPorAño: Record<number, Proyecto[]> = {
-//   2019: [
-//     {
-//       id: 1,
-//       img: "/photo1.JPG",
-//       descripcion: "Descripción del proyecto A1",
-//       photos: ["/image/2019/1/1.JPG"],
-//     },
-//     { id: 2, img: "/photo2.JPG", descripcion: "Descripción del proyecto A2" },
-//     { id: 3, img: "/photo3.JPG", descripcion: "Descripción del proyecto A3" },
-//     { id: 4, img: "/photo1.JPG", descripcion: "Descripción del proyecto A4" },
-//     { id: 5, img: "/photo2.JPG", descripcion: "Descripción del proyecto A5" },
-//     { id: 6, img: "/photo3.JPG", descripcion: "Descripción del proyecto A6" },
-//   ],
-//   2020: [
-//     { id: 1, img: "/photo1.JPG", descripcion: "Descripción del proyecto B1" },
-//     { id: 2, img: "/photo2.JPG", descripcion: "Descripción del proyecto B2" },
-//     { id: 3, img: "/photo3.JPG", descripcion: "Descripción del proyecto B3" },
-//     { id: 4, img: "/photo1.JPG", descripcion: "Descripción del proyecto B4" },
-//     { id: 5, img: "/photo2.JPG", descripcion: "Descripción del proyecto B5" },
-//     { id: 6, img: "/photo3.JPG", descripcion: "Descripción del proyecto B6" },
-//   ],
-//   2021: [
-//     { id: 1, img: "/photo1.JPG", descripcion: "Descripción del proyecto C1" },
-//     { id: 2, img: "/photo2.JPG", descripcion: "Descripción del proyecto C2" },
-//     { id: 3, img: "/photo3.JPG", descripcion: "Descripción del proyecto C3" },
-//     { id: 4, img: "/photo1.JPG", descripcion: "Descripción del proyecto C4" },
-//     { id: 5, img: "/photo2.JPG", descripcion: "Descripción del proyecto C5" },
-//     { id: 6, img: "/photo3.JPG", descripcion: "Descripción del proyecto C6" },
-//   ],
-//   2022: [
-//     { id: 1, img: "/photo1.JPG", descripcion: "Descripción del proyecto D1" },
-//     { id: 2, img: "/photo2.JPG", descripcion: "Descripción del proyecto D2" },
-//     { id: 3, img: "/photo3.JPG", descripcion: "Descripción del proyecto D3" },
-//     { id: 4, img: "/photo1.JPG", descripcion: "Descripción del proyecto D4" },
-//     { id: 5, img: "/photo2.JPG", descripcion: "Descripción del proyecto D5" },
-//     { id: 6, img: "/photo3.JPG", descripcion: "Descripción del proyecto D6" },
-//   ],
-//   2023: [
-//     { id: 1, img: "/photo1.JPG", descripcion: "Descripción del proyecto E1" },
-//     { id: 2, img: "/photo2.JPG", descripcion: "Descripción del proyecto E2" },
-//     { id: 3, img: "/photo3.JPG", descripcion: "Descripción del proyecto E3" },
-//     { id: 4, img: "/photo1.JPG", descripcion: "Descripción del proyecto E4" },
-//     { id: 5, img: "/photo2.JPG", descripcion: "Descripción del proyecto E5" },
-//     { id: 6, img: "/photo3.JPG", descripcion: "Descripción del proyecto E6" },
-//   ],
-// };
-
 const Proyectos: React.FC = async () => {
-  const years = await fs.readdir(process.cwd() + "/public/image");
+  const years = (await fs.readdir(process.cwd() + "/public/image")).filter(
+    (name) => name !== ".DS_Store"
+  );
 
   const projects = await Promise.all(
     years.map(async (year) => {
       const result = await fs.readdir(process.cwd() + `/public/image/${year}`);
       return {
-        [year]: result,
+        [year]: result.filter((name) => name !== ".DS_Store"),
       };
     })
   );
@@ -111,7 +58,11 @@ const Proyectos: React.FC = async () => {
               <div className="flex-grow flex items-center justify-center">
                 <div className=" grid w-fit grid-cols-1 md:grid-cols-2 gap-x-16 ">
                   {projects.map((project, i) => (
-                    <div key={project} className="w-fit p-4 flex gap-2">
+                    <Link
+                      href={`/proyecto/${year}/${project}`}
+                      key={project}
+                      className="w-fit p-4 flex gap-2"
+                    >
                       <Image
                         src={`/image/${year}/${project}/1.JPG`}
                         alt={`Imagen del proyecto ${project} | ${year}`}
@@ -119,10 +70,11 @@ const Proyectos: React.FC = async () => {
                         width={200}
                         height={128}
                       />
+
                       <p className="text-xl tracking-widest">
                         {i < 9 ? `0${i + 1}` : i + 1}
                       </p>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </div>
