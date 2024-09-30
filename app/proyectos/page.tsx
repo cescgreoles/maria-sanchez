@@ -6,8 +6,8 @@ import { FaTimes } from "react-icons/fa";
 
 type Proyecto = {
   id: number;
-  img: string; // URL de la imagen
-  descripcion: string; // Este campo no se utilizará en la visualización
+  img: string;
+  descripcion: string;
 };
 
 const proyectosPorAño: Record<number, Proyecto[]> = {
@@ -19,7 +19,7 @@ const proyectosPorAño: Record<number, Proyecto[]> = {
     { id: 5, img: "/photo2.JPG", descripcion: "Descripción del proyecto A5" },
     { id: 6, img: "/photo3.JPG", descripcion: "Descripción del proyecto A6" },
   ],
-  // Agrega más años y proyectos aquí según sea necesario...
+
   2020: [
     { id: 1, img: "/photo1.JPG", descripcion: "Descripción del proyecto B1" },
     { id: 2, img: "/photo2.JPG", descripcion: "Descripción del proyecto B2" },
