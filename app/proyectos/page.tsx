@@ -64,10 +64,11 @@ const Proyectos: React.FC = async () => {
   console.log("HOls");
 
   const file = await fs.readFile(process.cwd() + "/public/data.json", "utf8");
-  console.log(file);
+  const data = await JSON.parse(file);
 
   return (
     <div className="container mx-auto px-4 bg-black text-white">
+      <p>{JSON.stringify(data)}</p>
       <header className="flex justify-between items-center py-8">
         <div className="flex items-center">
           <Image
