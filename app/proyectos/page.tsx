@@ -66,7 +66,7 @@ const Proyectos: React.FC = async () => {
                       <Image
                         src={`/image/${year}/${project}/1.JPG`}
                         alt={`Imagen del proyecto ${project} | ${year}`}
-                        className="w-100 h-32 mr-2" // Reducir el margen derecho si es necesario
+                        className="w-100 h-32 mr-2"
                         width={200}
                         height={128}
                       />

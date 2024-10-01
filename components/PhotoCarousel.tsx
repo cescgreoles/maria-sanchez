@@ -48,10 +48,10 @@ const PhotoCarousel = ({ photos, year, project }: Props) => {
   }, [mainApi, onImageSelect]);
 
   return (
-    <div className="w-full flex flex-col gap-4">
+    <div className="w-full flex flex-col gap-4 ">
       <Carousel
         opts={{ align: "start", loop: false }}
-        className="w-full"
+        className="w-2/3 mx-auto"
         setApi={setMainApi}
       >
         <CarouselContent className="w-full p-0 m-0">
@@ -83,7 +83,7 @@ const PhotoCarousel = ({ photos, year, project }: Props) => {
 
       <Carousel
         opts={{ align: "center", loop: false, dragFree: true }}
-        className="w-full"
+        className="w-2/3 mx-auto"
         setApi={setThumbnailApi}
       >
         <CarouselContent className="w-full">

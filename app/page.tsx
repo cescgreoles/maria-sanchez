@@ -27,14 +27,6 @@ const Inicio = () => {
         alt="portada"
       />
 
-      <Image
-        src={images[currentImageIndex]}
-        className="w-full h-full inset-0 object-cover object-center absolute -z-10"
-        fill
-        sizes="100vw"
-        alt="portada"
-      />
-
       <div className="absolute top-10 left-10">
         <h1 className="text-2xl lg:text-4xl text-white">MARIA TORRECILLAS</h1>
         <p className="text-lg lg:text-xl text-white">FOTOGRAFÍA</p>

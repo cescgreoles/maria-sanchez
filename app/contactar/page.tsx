@@ -4,6 +4,8 @@ import { FormEvent, useState } from "react";
 import emailjs from "emailjs-com";
 import Image from "next/image";
 import logo from "@/assets/logo.jpeg";
+import { Link } from "lucide-react";
+import { FaTimes } from "react-icons/fa";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -38,20 +40,12 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen flex flex-column items-center justify-center relative">
       <Image
         src={"/photo1.JPG"}
         className="w-full h-full inset-0 object-cover object-center absolute -z-20"
         width={400}
         height={300}
-        alt="portada"
-      />
-
-      <Image
-        src={"/photo1.JPG"}
-        className="w-full h-full inset-0 object-cover object-center absolute -z-10"
-        fill
-        sizes="100vw"
         alt="portada"
       />
 
