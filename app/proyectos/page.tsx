@@ -37,12 +37,16 @@ const Proyectos: React.FC = async () => {
           <h1 className="text-2xl lg:text-4xl">PROYECTOS</h1>
         </div>
 
-        <Link href="/" className="text-white text-1xl uppercase">
+        <Link href="/" className="text-white text-2xl uppercase">
+          {/* Icono de cerrar para pantallas móviles */}
           <span className="block lg:hidden">
             <FaTimes className="text-2xl" />
           </span>
 
-          <span className="hidden lg:block">CERRAR</span>
+          {/* Texto "CERRAR" visible solo en pantallas grandes */}
+          <span className="hidden lg:block text-white text-xl uppercase border-b-2 border-white pb-1">
+            CERRAR
+          </span>
         </Link>
       </header>
 

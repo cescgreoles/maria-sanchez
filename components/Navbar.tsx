@@ -13,13 +13,11 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Navbar */}
       <nav
         className={`fixed top-0 w-full z-30 ${
           isOpen ? "h-full bg-black" : "lg:h-20"
         }`}
       >
-        {/* Hamburguesa solo en mobile */}
         {!isOpen && (
           <div className="lg:hidden absolute top-10 right-7 z-20">
             <button onClick={toggleMenu} className="text-white text-3xl">
@@ -28,7 +26,6 @@ const Navbar = () => {
           </div>
         )}
 
-        {/* Menu para Mobile (pantalla completa con fondo negro cuando está abierto) */}
         <ul
           className={`lg:hidden lg:flex lg:flex-row lg:space-x-8 transition-transform duration-300 ease-in-out
                       ${
@@ -70,16 +67,15 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* Menu para Desktop en formato columna, separado de los lados, y subrayado */}
         <ul className="hidden lg:flex lg:flex-col lg:space-y-6 lg:items-center lg:justify-center lg:absolute lg:right-10 lg:top-10">
-          <li>
+          {/* <li>
             <Link
               href="/"
               className="text-white text-xl uppercase border-b-2 border-white pb-1"
             >
               INICIO
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               href="/proyectos"
@@ -99,7 +95,6 @@ const Navbar = () => {
         </ul>
       </nav>
 
-      {/* Cuando el menú está abierto, ocultamos el contenido principal */}
       {isOpen && (
         <div className="fixed inset-0 bg-black opacity-80 z-0 pointer-events-none"></div>
       )}

@@ -4,6 +4,8 @@ import { FormEvent, useState } from "react";
 import emailjs from "emailjs-com";
 import Image from "next/image";
 import logo from "@/assets/logo.jpeg";
+import Link from "next/link";
+import { FaTimes } from "react-icons/fa";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -12,9 +14,9 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const serviceId = "YOUR_SERVICE_ID";
-  const templateId = "YOUR_TEMPLATE_ID";
-  const userId = "YOUR_USER_ID";
+  const serviceId = "service_36q377n";
+  const templateId = "template_konc18x";
+  const userId = "u7nwqX9Mxw7dZLnEbKUGa";
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -38,16 +40,28 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-column items-center justify-center relative">
+    <div className="min-h-screen relative flex items-center justify-center">
+      {/* Imagen de fondo */}
       <Image
         src={"/photo1.JPG"}
         className="w-full h-full inset-0 object-cover object-center absolute -z-20"
-        width={400}
-        height={300}
+        layout="fill"
         alt="portada"
       />
 
-      <div className="bg-black bg-opacity-50 backdrop-blur-sm p-8 rounded-lg shadow-lg max-w-md w-full mx-4 m-5">
+      {/* Botón CERRAR en la parte superior derecha */}
+      <header className="absolute top-8 right-8 p-4 ">
+        <Link href="/" className="text-white text-2xl uppercase">
+          <span className="block lg:hidden">
+            <FaTimes className="text-2xl" />
+          </span>
+          <span className="text-white text-xl uppercase border-b-2 border-white pb-1">
+            CERRAR
+          </span>
+        </Link>
+      </header>
+
+      <div className="bg-black bg-opacity-50 backdrop-blur-sm p-8 rounded-lg shadow-lg max-w-md w-full mx-4 -z-10">
         <div className="flex justify-center items-center mb-6">
           <Image
             src={logo}
