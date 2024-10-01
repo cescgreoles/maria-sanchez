@@ -4,7 +4,6 @@ import logo from "@/assets/logo.jpeg";
 import Link from "next/link";
 import { FaTimes } from "react-icons/fa";
 import { promises as fs } from "fs";
-import photo from "@/assets/photo.jpg";
 
 const Proyectos: React.FC = async () => {
   const years = (await fs.readdir(process.cwd() + "/public/image")).filter(

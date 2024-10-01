@@ -4,8 +4,6 @@ import { FormEvent, useState } from "react";
 import emailjs from "emailjs-com";
 import Image from "next/image";
 import logo from "@/assets/logo.jpeg";
-import { Link } from "lucide-react";
-import { FaTimes } from "react-icons/fa";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
