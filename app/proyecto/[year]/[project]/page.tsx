@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo.png";
 import Link from "next/link";
 import { FaTimes } from "react-icons/fa";
 import { promises as fs } from "fs";
