@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo.png";
 import Link from "next/link";
 import { FaTimes } from "react-icons/fa";
 import { promises as fs } from "fs";
@@ -27,13 +27,16 @@ const Proyectos: React.FC = async () => {
     <div className="container mx-auto px-4 bg-black text-white">
       <header className="flex justify-between items-center py-8">
         <div className="flex items-center">
-          <Image
-            src={logo}
-            alt="Logo"
-            className="h-12 w-12 mr-4"
-            width={48}
-            height={48}
-          />
+          <Link href={"/"}>
+            <Image
+              src={logo}
+              alt="Logo"
+              className="h-12 w-12 mr-4"
+              width={48}
+              height={48}
+            />
+          </Link>
+
           <h1 className="text-2xl lg:text-4xl">PROYECTOS</h1>
         </div>
 

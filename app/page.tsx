@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo.png";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
+import Link from "next/link";
 
 const images = ["/photo1.JPG", "/photo2.JPG", "/photo3.jpg"];
 
@@ -33,7 +34,9 @@ const Inicio = () => {
       </div>
 
       <div className="flex justify-center items-center h-full">
-        <Image src={logo} alt="logo" className="w-12" />
+        <Link href={"/proyectos"}>
+          <Image src={logo} alt="logo" className="w-12" />
+        </Link>
       </div>
 
       <Navbar />
