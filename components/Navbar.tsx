@@ -62,7 +62,7 @@ const Navbar = () => {
               className="text-white text-2xl uppercase"
               onClick={toggleMenu}
             >
-              CONTACTAR
+              CONTACTO
             </Link>
           </li>
         </ul>
@@ -89,7 +89,7 @@ const Navbar = () => {
               href="/contactar"
               className="text-white text-xl uppercase border-b-2 border-white pb-1"
             >
-              CONTACTAR
+              CONTACTO
             </Link>
           </li>
         </ul>

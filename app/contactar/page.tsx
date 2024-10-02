@@ -3,7 +3,7 @@
 import { FormEvent, useState } from "react";
 import emailjs from "emailjs-com";
 import Image from "next/image";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo.png";
 import Link from "next/link";
 import { FaTimes } from "react-icons/fa";
 
@@ -41,7 +41,6 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen relative flex items-center justify-center">
-      {/* Imagen de fondo */}
       <Image
         src={"/photo1.JPG"}
         className="w-full h-full inset-0 object-cover object-center absolute -z-20"
@@ -49,13 +48,12 @@ export default function ContactPage() {
         alt="portada"
       />
 
-      {/* Botón CERRAR en la parte superior derecha */}
-      <header className="absolute top-8 right-8 p-4 ">
+      <header className="absolute top-1 right-1 p-4 ">
         <Link href="/" className="text-white text-2xl uppercase">
-          <span className="block lg:hidden">
+          <span className="block lg:hidden ">
             <FaTimes className="text-2xl" />
           </span>
-          <span className="text-white text-xl uppercase border-b-2 border-white pb-1">
+          <span className="hidden lg:block text-white text-xl uppercase border-b-2 border-white pb-1">
             CERRAR
           </span>
         </Link>
@@ -70,10 +68,10 @@ export default function ContactPage() {
             width={48}
             height={48}
           />
-          <h1 className="text-4xl font-bold text-white">Contacto</h1>
+          <h1 className="text-4xl text-white">CONTACTO</h1>
         </div>
 
-        <p className="text-center text-gray-300 mb-6">
+        <p className="text-center text-gray-200 mb-6">
           ¿Tienes algún proyecto de fotografía en mente o una consulta? ¡No
           dudes en escribirme! Estaré encantada de ponerme en contacto contigo
           lo antes posible.
