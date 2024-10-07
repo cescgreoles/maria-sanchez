@@ -41,16 +41,18 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen relative flex items-center justify-center">
+      {/* Imagen de fondo */}
       <Image
         src={"/photo1.JPG"}
-        className="w-full h-full inset-0 object-cover object-center absolute -z-20"
-        layout="fill"
+        className="w-full h-full inset-0 object-cover object-center"
+        fill
         alt="portada"
       />
 
-      <header className="absolute top-1 right-1 p-4 ">
+      {/* Header con botón de cerrar */}
+      <header className="absolute top-1 right-1 p-4">
         <Link href="/" className="text-white text-2xl uppercase">
-          <span className="block lg:hidden ">
+          <span className="block lg:hidden">
             <FaTimes className="text-2xl" />
           </span>
           <span className="hidden lg:block text-white text-xl uppercase border-b-2 border-white pb-1">
@@ -59,7 +61,8 @@ export default function ContactPage() {
         </Link>
       </header>
 
-      <div className="bg-black bg-opacity-50 backdrop-blur-sm p-8 rounded-lg shadow-lg max-w-md w-full mx-4 -z-10">
+      {/* Contenedor del formulario */}
+      <div className="bg-black bg-opacity-50 backdrop-blur-sm p-8 rounded-lg shadow-lg max-w-md w-full mx-4 z-10">
         <div className="flex justify-center items-center mb-6">
           <Image
             src={logo}
