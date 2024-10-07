@@ -14,7 +14,7 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const serviceId = "service_36q377n";
+  const serviceId = "service_ph7vo6i";
   const templateId = "template_konc18x";
   const userId = "02v5LAiTAqxhZvTpB";
 
@@ -41,7 +41,6 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen relative flex items-center justify-center">
-      {/* Imagen de fondo */}
       <Image
         src={"/photo1.JPG"}
         className="w-full h-full inset-0 object-cover object-center"
@@ -49,7 +48,6 @@ export default function ContactPage() {
         alt="portada"
       />
 
-      {/* Header con botón de cerrar */}
       <header className="absolute top-1 right-1 p-4">
         <Link href="/" className="text-white text-2xl uppercase">
           <span className="block lg:hidden">
@@ -61,7 +59,6 @@ export default function ContactPage() {
         </Link>
       </header>
 
-      {/* Contenedor del formulario */}
       <div className="bg-black bg-opacity-50 backdrop-blur-sm p-8 rounded-lg shadow-lg max-w-md w-full mx-4 z-10">
         <div className="flex justify-center items-center mb-6">
           <Image
